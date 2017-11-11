@@ -1,9 +1,11 @@
 package com.rfproductions.acts_project;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ public class LevelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setTitle("Level "+number);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
@@ -65,6 +68,19 @@ public class LevelActivity extends AppCompatActivity {
             constraintSet.setHorizontalBias(newB.getId(), (float) (Math.random()));
             constraintSet.applyTo(layout);
             i++;
+
+            newB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (((Button) v).getText().equals(correct)) {
+                        Intent cIntent = new Intent(LevelActivity.this, CorrectActivity.class);
+                        startActivity(cIntent);
+                    } else {
+                        Intent wIntent = new Intent(LevelActivity.this, WrongActivity.class);
+                        startActivity(wIntent);
+                    }
+                }
+            });
         }
 
     }
