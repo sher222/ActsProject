@@ -7,3 +7,5 @@ To add a level:
   * `CorrectActivity.java` and `activity_correct.xml`
   * `WrongActivity.java` and `activity_wrong.xml`
 * Edit the parameters at the top of the page
+
+Please use landscape mode for this app.
