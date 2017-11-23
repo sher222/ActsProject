@@ -18,7 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".CorrectActivity" />
-        <activity android:name=".WrongActivity"></activity>
+        <activity android:name=".WrongActivity" />
+        <activity
+            android:name=".comics"
+            android:label="@string/title_activity_comics"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

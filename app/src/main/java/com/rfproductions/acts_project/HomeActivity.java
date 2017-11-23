@@ -10,6 +10,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     private Button play;
+    private Button comics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,17 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         play = (Button) findViewById(R.id.button2);
+        comics=(Button) findViewById(R.id.comics);
+
+        comics.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(HomeActivity.this, comics.class);
+                                        startActivity(intent);
+                                    }
+                                }
+
+        );
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +38,10 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, LevelActivity.class);
                 startActivity(intent);
             }
-        });
+        }
+
+
+
+        );
     }
 }
