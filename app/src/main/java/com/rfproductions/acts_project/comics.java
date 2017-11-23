@@ -1,6 +1,7 @@
 package com.rfproductions.acts_project;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class comics extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//force portrait
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comics);
 
@@ -74,9 +76,7 @@ public class comics extends AppCompatActivity {
             case R.id.backbutton:
                 Intent intent = new Intent(comics.this, HomeActivity.class);
                 startActivity(intent);
-            case R.id.about:
-                //when we have a about page add it here
-                return true;
+
         }
 
 
