@@ -110,28 +110,22 @@ public class comics extends AppCompatActivity {
                 case 2:
                     tab3 t3=new tab3();
                     return t3;
+                case 3:
+                    tab4 t4=new tab4();
+                    return t4;
+                case 4:
+                    tab5 t5=new tab5();
+                    return t5;
                 default:
                     return null;
             }
         }
-
+        //to add more pages change the return to number of chapters
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+
+            return 5;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }
     }
 }
