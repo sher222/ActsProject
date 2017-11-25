@@ -3,4 +3,7 @@
     <string name="button_play">Play</string>
     <string name="button_intro">Introduction</string>
     <string name="title_activity_wrong">WrongActivity</string>
+    <string name="title_activity_comics">comics</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
