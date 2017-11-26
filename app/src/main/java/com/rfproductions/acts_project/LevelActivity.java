@@ -3,6 +3,7 @@ package com.rfproductions.acts_project;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.transition.TransitionManager;
@@ -16,6 +17,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -39,7 +41,7 @@ public class LevelActivity extends AppCompatActivity {
     /* Parameters */
     private int random = (int) (Math.random() * (wrong.length + 1)); // Random number between 0 and
     // length of wrong string (for correct insertion)
-    private float[] vertB = {0.35f, 0.35f, 0.95f, 0.95f}; // Vertical constraints of four answers
+    private float[] vertB = {0.05f, 0.05f, 0.95f, 0.95f}; // Vertical constraints of four answers
     private float[] horizB = {0.05f, 0.95f, 0.05f, 0.95f}; // Horizontal constraints of four answers
     private ArrayList<String> bList = new ArrayList<>(); // Button list
     private GestureDetectorCompat mDetector; // Detect movement
@@ -52,7 +54,7 @@ public class LevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // Force landscape
-        this.setTitle("Level "+number); // Set top title
+        this.setTitle("Level "+(number+1)); // Set top title
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
@@ -75,18 +77,20 @@ public class LevelActivity extends AppCompatActivity {
 
         int i = 100;
         for (String s : bList) {
-            ImageButton newB = new ImageButton(this); // Create new ImageButton
-            newB.setBackgroundResource(R.drawable.green); // Set button picture to green.jpg
+            Button newB = new Button(this); // Create new Button
+            //newB.setBackgroundResource(R.drawable.green); // Set button picture to green.jpg
             newB.setId(i); // Set ID: so layout can identify button
-
+            newB.setText(s);
+            newB.setBackgroundColor(Color.GREEN);
             mDetector = new GestureDetectorCompat(this, new MyGestureListener());
 
             /* Set button height, width */
             Display display = getWindowManager().getDefaultDisplay();
             int width = (int) (display.getWidth() * 0.05); // 5% of screen height
             int height = (int) (display.getWidth() * 0.05);
-            newB.setLayoutParams(new ConstraintLayout.LayoutParams(width, height));
+            newB.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, height));
             layout.addView(newB);
+
 
             /* Create popup window */
             final int fi = i;
