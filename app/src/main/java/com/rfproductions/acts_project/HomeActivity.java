@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         comics.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Intent intent = new Intent(HomeActivity.this, comics.class);
+                                        Intent intent = new Intent(HomeActivity.this, displayComics.class);
                                         startActivity(intent);
                                     }
                                 }

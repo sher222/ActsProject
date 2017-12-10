@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comics1_layout"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.rfproductions.acts_project.CorrectActivity">
+
+
+    <ImageView
+        android:id="@+id/currentComic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/acts_ch1_comic" />
+</android.support.constraint.ConstraintLayout>
+
