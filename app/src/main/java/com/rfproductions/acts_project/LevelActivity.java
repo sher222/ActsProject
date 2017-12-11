@@ -38,11 +38,34 @@ public class LevelActivity extends AppCompatActivity {
     private String[] qText = {"example",
             "What did Jesus promise to his disciples before ascending to heaven?",
             "Who was chosen to replace Judas as an apostle?",
-            "What happened as the disciples received the Holy Spirit?"}; // Question (e.g. 'Who was Jesus?')
+            "What happened as the disciples received the Holy Spirit?",
+            "Who arrested Peter and John as they preached after healing the lame man?",
+            "Who did Peter and John heal at the Beautiful Gate?",
+            "How did Ananias and Sapphira lie to the Holy Spirit?",
+            "How did the imprisoned apostles appear in the temple?",
+            "How did Stephen prove his point to the council?",
+            "What was the name of the sorcerer that wanted to buy the power of the Holy Spirit?",
+            "Which book of the bible was the Ethiopian eunuch reading?",
+            "What was Tabitha's Greek name?",
+            "Where is Simon Peter's house located?",
+            "Why did Peter let the Gentiles into his home?",
+            "Who imprisoned Peter and killed James?",
+            "What did the disciples do before they went to Iconium?",
+            "In Lystra, what did the people do as a result of a miracle?",
+            "Were the believers happy that the Gentiles had come to know Jesus?",
+            "Why did the Jews start a riot and persecute Paul and Silas?",
+            "Why didn't the disciples at Ephesus receive the Holy Spirit?",
+            "Why did Paul bid the Ephesians elder farewell?",}; // Question (e.g. 'Who was Jesus?')
     private String[] correct = {"Yes!", "The coming of the Holy Spirit",
-            "Matthias", "They spoke in tongues to the people"}; // Correct answer (e.g. 'The Son of God')
+            "Matthias", "They spoke in tongues to the people","The Roman guards",
+            "A lame man", "They sold some property deceptively", "They were saved by an angel",
+            "He used the history of Israel to prove his point", "Simon", "Isaiah", "Dorcas", "Joppa, near the sea",
+            "He was commanded by God to do so", "King Herod", "Shake the dust off their feet",
+            "All of the others", "Yes", "They didn't believe in what Paul and Silas said",
+            "They received John's baptism", "They knew that none of them would ever see him again"
+    }; // Correct answer (e.g. 'The Son of God')
     private ArrayList<String[]> wrong = new ArrayList<>(); // Wrong answers
-    // (e.g. {'Me', 'The sky', 'Our President'})
+    // (e.g. {'Me'The sky', 'Our President'})
 
     /* Parameters */
     private float[] vertB = {0.05f, 0.05f, 0.95f, 0.95f}; // Vertical constraints of four answers
@@ -65,10 +88,29 @@ public class LevelActivity extends AppCompatActivity {
 
         wrong.add(new String[]{"Wrong", "Not right", "No"});
         wrong.add(new String[]{"The defeat of the Roman Empire", "Happy days of rest", "He did not promise anything"});
-        wrong.add(new String[]{"Paul", "Barnabas", "Matthias"});
+        wrong.add(new String[]{"Paul", "Barnabas", "Judas was not replaced"});
         wrong.add(new String[]{"Their heads were slightly burnt", "They did not realize until later", "They thought it was the work of the devil and went mad"});
-
-
+        wrong.add(new String[]{"The priests", "The captain of the temple guard", "The Sadducees"});
+        wrong.add(new String[]{"A demon-possessed man", "A man blind from birth", "A man sick to the point of death"});
+        wrong.add(new String[]{"They gave the Holy Spirit fake news", "They were frightened when asked about a sin",
+            "They told the Holy Spirit they were not a part of the church"});
+        wrong.add(new String[]{"They cleverly escaped with wisdom from the Holy Spirit",
+                "They were brought out by their arresters to be insulted",
+            "They were always preaching in the temple"});
+        wrong.add(new String[]{"He flamed them until they gave up from embarrasment"});
+        wrong.add(new String[]{"Saul", "Phillip", "Sirius"});
+        wrong.add(new String[]{"Jeremiah", "Acts", "Deuteronomy"});
+        wrong.add(new String[]{"Sapphira", "Hera", "Aeneas"});
+        wrong.add(new String[]{"Joppa, in the mountains", "Damascus, near the sea", "Damascus, in the mountains"});
+        wrong.add(new String[]{"He liked them very much", "He drank too much wine and mistakenly did so",
+                "He was a Gentile and did not have to follow Jewish law"});
+        wrong.add(new String[]{"The Jewish leaders", "Peter's jealous followers", "The Lord"});
+        wrong.add(new String[]{"Feast with the Jews", "Baptized the Jewish leaders", "Nothing"});
+        wrong.add(new String[]{"Sacrifice of the disciples", "Stone Paul", "Treat the disciples like gods"});
+        wrong.add(new String[]{"No"});
+        wrong.add(new String[]{"They were jealous", "They were just plain haters"});
+        wrong.add(new String[]{"They weren't true Christians", "They didn't pray", "They weren't baptized"});
+        wrong.add(new String[]{"He was going to commit suicide", "He felt like it"});
         try {
             Intent numIntent = getIntent();
             int num = Integer.parseInt(numIntent.getStringExtra("number"));
