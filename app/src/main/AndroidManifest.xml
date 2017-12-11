@@ -21,11 +21,21 @@
         </activity>
         <activity android:name=".CorrectActivity" />
         <activity android:name=".WrongActivity" />
+        <activity android:name=".MapActivity" />
         <activity
             android:name=".displayComics"
             android:label="@string/title_activity_comics"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".WinActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCqdS6keaPezd5TNahU0R5EPStFKcyHJQQ"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <uses-permission
+            android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
 
 </manifest>

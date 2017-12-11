@@ -68,7 +68,7 @@ public class LevelActivity extends AppCompatActivity {
         } catch (Exception e) {
             number = 0;
         }
-        if (number > wrong.size()) {
+        if (number >= correct.length) {
             Intent intent = new Intent(LevelActivity.this, WinActivity.class);
             startActivity(intent);
         }

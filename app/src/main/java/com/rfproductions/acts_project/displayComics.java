@@ -21,7 +21,7 @@ public class displayComics extends AppCompatActivity {
     //READ README FOR MORE INFO
     static public int[] imageName={
         R.drawable.acts_ch1_comic, R.drawable.acts_ch2_comic, R.drawable.acts_ch3_comics,
-            R.drawable.acts_ch4_comics, R.drawable.acts_ch5_comics, R.drawable.acts_ch6_comics
+            R.drawable.acts_ch4_comics, R.drawable.acts_ch5_comics
     };
 
     static public ImageView currentComic;
