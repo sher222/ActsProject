@@ -35,8 +35,12 @@ public class LevelActivity extends AppCompatActivity {
 
     /* EDIT THIS! */
     private int number = 0; // Question number
-    private String[] qText = {"Hello world!"}; // Question (e.g. 'Who was Jesus?')
-    private String[] correct = {"Yes!"}; // Correct answer (e.g. 'The Son of God')
+    private String[] qText = {"example",
+            "What did Jesus promise to his disciples before ascending to heaven?",
+            "Who was chosen to replace Judas as an apostle?",
+            "What happened as the disciples received the Holy Spirit?"}; // Question (e.g. 'Who was Jesus?')
+    private String[] correct = {"Yes!", "The coming of the Holy Spirit",
+            "Matthias", "They spoke in tongues to the people"}; // Correct answer (e.g. 'The Son of God')
     private ArrayList<String[]> wrong = new ArrayList<>(); // Wrong answers
     // (e.g. {'Me', 'The sky', 'Our President'})
 
@@ -60,13 +64,17 @@ public class LevelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level);
 
         wrong.add(new String[]{"Wrong", "Not right", "No"});
+        wrong.add(new String[]{"The defeat of the Roman Empire", "Happy days of rest", "He did not promise anything"});
+        wrong.add(new String[]{"Paul", "Barnabas", "Matthias"});
+        wrong.add(new String[]{"Their heads were slightly burnt", "They did not realize until later", "They thought it was the work of the devil and went mad"});
+
 
         try {
             Intent numIntent = getIntent();
             int num = Integer.parseInt(numIntent.getStringExtra("number"));
             number = num;
         } catch (Exception e) {
-            number = 0;
+            number = 1;
         }
         if (number >= correct.length) {
             Intent intent = new Intent(LevelActivity.this, WinActivity.class);
