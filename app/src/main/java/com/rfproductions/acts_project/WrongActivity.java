@@ -132,6 +132,9 @@ public class WrongActivity extends Activity {
             Log.d("pos", String.valueOf(playerX)+" "+String.valueOf(playerY));
             if (playerY<50){
                 Intent goBack=new Intent(WrongActivity.this, LevelActivity.class);
+                Intent intent=getIntent();
+                int number=Integer.parseInt(intent.getStringExtra("number"));
+                goBack.putExtra("number", number+1+"");
                 startActivity(goBack);
             }
             return true;
@@ -184,7 +187,7 @@ public class WrongActivity extends Activity {
                                 int number=Integer.parseInt(intent.getStringExtra("number"));
                                 //change this so it shows a u died screen
                                 Intent send=new Intent(WrongActivity.this, LevelActivity.class);
-                                send.putExtra("number", number);
+                                send.putExtra("number", number+"");
                                 startActivity(intent);
                             }
                         }
