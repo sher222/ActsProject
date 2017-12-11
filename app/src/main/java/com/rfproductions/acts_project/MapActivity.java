@@ -233,7 +233,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
-        goToLocation(37.120950, 24.046957, 5);
+        goToLocation(38.120950, 24.046957, 4);
         mGoogleMap.getUiSettings().setScrollGesturesEnabled(false);
         try {
             boolean success = googleMap.setMapStyle(
