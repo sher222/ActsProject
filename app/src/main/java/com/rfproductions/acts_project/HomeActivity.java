@@ -12,6 +12,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button play;
     private Button comics;
+    private Button map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
         play = (Button) findViewById(R.id.button2);
         comics=(Button) findViewById(R.id.comics);
+        map = (Button) findViewById(R.id.button);
 
         comics.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -46,5 +48,14 @@ public class HomeActivity extends AppCompatActivity {
 
 
         );
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
