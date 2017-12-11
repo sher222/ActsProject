@@ -1,6 +1,5 @@
 package com.rfproductions.acts_project;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -10,24 +9,17 @@ import android.support.transition.TransitionManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Display;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class LevelActivity extends AppCompatActivity {
 
@@ -62,7 +54,7 @@ public class LevelActivity extends AppCompatActivity {
         layout = (ConstraintLayout) findViewById(R.id.level_layout);
         TextView numberV = (TextView) findViewById(R.id.number);
         TextView qTextV = (TextView) findViewById(R.id.qText);
-        ImageView playerV = (ImageView) findViewById(R.id.player);
+        ImageView playerV = (ImageView) findViewById(R.id.monster);
 
         /* Set view text */
         numberV.setText("Question "+number);
@@ -92,7 +84,7 @@ public class LevelActivity extends AppCompatActivity {
             layout.addView(newB);
 
 
-            /* Create popup window */
+            /* Create popup  window */
             final int fi = i;
             pops[i-100] = new ConstraintLayout(this);
             pops[i-100].setId(i+50);
@@ -168,7 +160,7 @@ public class LevelActivity extends AppCompatActivity {
                 TransitionManager.beginDelayedTransition(layout);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(layout);
-                constraintSet.setHorizontalBias(R.id.player, playerHoriz + movement);
+                constraintSet.setHorizontalBias(R.id.monster, playerHoriz + movement);
                 playerHoriz += movement;
                 constraintSet.applyTo(layout);
                 Log.d(DEBUG_TAG, "Left-to-right");
@@ -178,7 +170,7 @@ public class LevelActivity extends AppCompatActivity {
                 TransitionManager.beginDelayedTransition(layout);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(layout);
-                constraintSet.setHorizontalBias(R.id.player, playerHoriz - movement);
+                constraintSet.setHorizontalBias(R.id.monster, playerHoriz - movement);
                 playerHoriz -= movement;
                 constraintSet.applyTo(layout);
                 Log.d(DEBUG_TAG, "Right-to-left");
@@ -188,7 +180,7 @@ public class LevelActivity extends AppCompatActivity {
                 TransitionManager.beginDelayedTransition(layout);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(layout);
-                constraintSet.setVerticalBias(R.id.player, playerVert + movement);
+                constraintSet.setVerticalBias(R.id.monster, playerVert + movement);
                 playerVert += movement;
                 constraintSet.applyTo(layout);
                 Log.d(DEBUG_TAG, "Top-to-bottom");
@@ -198,7 +190,7 @@ public class LevelActivity extends AppCompatActivity {
                 TransitionManager.beginDelayedTransition(layout);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(layout);
-                constraintSet.setVerticalBias(R.id.player, playerVert - movement);
+                constraintSet.setVerticalBias(R.id.monster, playerVert - movement);
                 playerVert -= movement;
                 constraintSet.applyTo(layout);
                 Log.d(DEBUG_TAG, "Bottom-to-top");

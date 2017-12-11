@@ -21,7 +21,12 @@ public class displayComics extends AppCompatActivity {
     //READ README FOR MORE INFO
     static public int[] imageName={
         R.drawable.acts_ch1_comic, R.drawable.acts_ch2_comic, R.drawable.acts_ch3_comics,
-            R.drawable.acts_ch4_comics, R.drawable.acts_ch5_comics, R.drawable.acts_ch6_comics
+            R.drawable.acts_ch4_comics, R.drawable.acts_ch5_comics, R.drawable.acts_ch6_comics,
+            R.drawable.acts_ch7, R.drawable.acts_ch8, R.drawable.acts_ch9, R.drawable.acts_ch10_comic,
+            R.drawable.acts_ch11, R.drawable.acts_ch12, R.drawable.acts_ch13, R.drawable.acts_ch14,
+            R.drawable.acts_ch15, R.drawable.acts_ch16, R.drawable.acts_ch17, R.drawable.acts_ch18, R.drawable.acts_ch_19,
+            R.drawable.ch20, R.drawable.ch21, R.drawable.ch22, R.drawable.ch23, R.drawable.ch24, R.drawable.ch25,
+            R.drawable.ch26, R.drawable.ch27, R.drawable.ch28
     };
 
     static public ImageView currentComic;
@@ -58,7 +63,7 @@ class comicsListener extends GestureDetector.SimpleOnGestureListener { // Listen
            currentCh--;
            Log.d("swipe", "up");
            //prevents array out of bounds error
-           if (currentCh<0){
+           if (currentCh<=0){
                currentCh++;
                return true;
            }
