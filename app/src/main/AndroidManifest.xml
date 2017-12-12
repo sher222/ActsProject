@@ -15,6 +15,7 @@
         </intent-filter>
     </activity>
     <activity android:name=".CorrectActivity" />
+    <activity android:name=".DiedActivity"/>
     <activity android:name=".WrongActivity" />
     <activity android:name=".MapActivity" />
     <activity android:name=".displayComics" android:label="@string/title_activity_comics"
