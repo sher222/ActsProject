@@ -16,6 +16,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -43,6 +45,7 @@ class ActsEvents {
     double coordinate_1;
     double coordinate_2;
     boolean connected = false;
+
     ActsEvents(String t, String eventLocality, double c1, double c2, boolean isConnected) {
         title = t;
         locality = eventLocality;
@@ -107,7 +110,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         actsEventses.add(new ActsEvents("|Travel|", "Phillipi", 41.011959, 24.286190, true));
         actsEventses.add(new ActsEvents("Paul in Troas", "Troas", 39.506643, 26.080592, true));
         actsEventses.add(new ActsEvents("|Travel|", "Assos", 39.489550, 26.335867, true));
-        actsEventses.add(new ActsEvents("|Travel|", "Mitylene", 26.551804,39.100335, true));
+        actsEventses.add(new ActsEvents("|Travel|", "Mitylene", 39.100335, 26.551804, true));
         actsEventses.add(new ActsEvents("|Travel|", "Chios", 38.444840, 26.063302, true));
         actsEventses.add(new ActsEvents("|Travel|", "Samos", 37.715172, 26.934167, true));
         actsEventses.add(new ActsEvents("|Travel|", "Miletus", 37.5, 27.3, true));
@@ -178,6 +181,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         MarkerOptions options = new MarkerOptions()
                                 .title(actsEventses.get(c).title)
                                 .position(new LatLng(actsEventses.get(c).coordinate_1, actsEventses.get(c).coordinate_2));
+                        abc = mGoogleMap.addMarker(options);
+                        myMarkers.add(abc);
+                    }
+                    if (found) {
+                        MarkerOptions options = new MarkerOptions()
+                                .title(actsEventses.get(c).title)
+                                .position(new LatLng(actsEventses.get(c).coordinate_1, actsEventses.get(c).coordinate_2));
+                        if (actsEventses.get(c).connected) {
+                            options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                        }
                         abc = mGoogleMap.addMarker(options);
                         myMarkers.add(abc);
                     }

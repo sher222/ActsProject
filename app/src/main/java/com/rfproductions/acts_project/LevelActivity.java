@@ -82,7 +82,6 @@ public class LevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // Force landscape
-        this.setTitle("Question "+ number); // Set top title
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
@@ -122,6 +121,8 @@ public class LevelActivity extends AppCompatActivity {
             Intent intent = new Intent(LevelActivity.this, WinActivity.class);
             startActivity(intent);
         }
+
+        this.setTitle("Question "+ number); // Set top title
 
         /* Views */
         pops = new ConstraintLayout[wrong.get(number).length + 1];
